@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<a href="save" class="btn btn-primary">Create Patient</a>
+<table class="table table-primary">
+    <tr>
+        <th>Patient ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>address</th>
+        <th>contact</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Date</th>
+    </tr>
+    {% for data in patients %}
+    <tr>
+        <td>{{data.patient_id}}</td>
+        <td>{{data.fname}}</td>
+        <td>{{data.lname}}</td>
+        <td>{{data.address}}</td>
+        <td>{{data.contact}}</td>
+        <td>{{data.age}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.date}}</td>
+        <th>
+            <a href="update/{{data.patient_id}}" class="btn btn-primary">edit</a>
+            
+            <a href="delete/{{data.patient_id}}" class="btn btn-success">delete</a>
+        </th>
+    </tr>
+    {% endfor %}
+</table>
+
+<!--to active selected tab in sidebar-->
+<script type="text/javascript">
+    $(function () {
+        $('.sidebar').find('.active').removeClass('active');
+        $('#patient').addClass('active');
+    });
+</script>
+{% endblock %}

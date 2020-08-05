@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form method="POST" action="save">
+    {% csrf_token %}
+    <label>first name</label>
+    {{form.fname}}
+    <!--    <input type="text" id="name" name="name" />-->
+
+
+    <label>last name</label>
+    {{form.lname}}
+    <!--    <input type="text" id="email" name="email" />-->
+
+    <label>address</label>
+    {{form.address}}
+    <!--    <input type="text" id="email" name="email" />-->
+
+    <label>contact</label>
+    {{form.contact}}
+    <!--    <input type="text" id="email" name="email" />-->
+
+    <label>age</label>
+    {{form.age}}
+    <!--    <input type="text" id="password" name="password" />-->
+
+    <label>email</label>
+    {{form.email}}
+    <!--    <input type="text" id="password" name="password" />-->
+
+    <label>date</label>
+    <!-- {{form.date}} -->
+       <input type="date" id="date" name="date" />
+
+    <input type="submit" value="submit"/>
+</form>
+<script type="text/javascript">
+    $(function () {
+        $('.sidebar').find('.active').removeClass('active');
+        $('#patient').addClass('active');
+    });
+</script>
+{% endblock %}
